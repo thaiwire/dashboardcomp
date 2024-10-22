@@ -1,7 +1,31 @@
 import { Button } from "@/components/ui/button";
 import { UserButton } from "@clerk/nextjs";
 import { CardSummary } from "./components/CardSummary";
-import { UsersRound } from "lucide-react";
+import { BookOpenCheck, UsersRound, Waypoints } from "lucide-react";
+
+export const dataCardsSummary = [
+  {
+    icon: UsersRound,
+    total: "12.501",
+    average: 15,
+    title: "Company Created",
+    tooltipText: "Sell all Created Company ",
+  },
+  {
+    icon: Waypoints,
+    total: "86.501",
+    average: 80,
+    title: "Total Revenue",
+    tooltipText: "Sell all Summary",
+  },
+  {
+    icon: BookOpenCheck,
+    total: "312.501",
+    average: 30,
+    title: "Bounce Rate",
+    tooltipText: "Sell all Bounce Rate ",
+  },
+];
 
 export default function Home() {
   return (
@@ -9,13 +33,18 @@ export default function Home() {
       <UserButton />
       <h2 className="text-2xl mb-4">Dashboard</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-20">
-        <CardSummary
-          icon={UsersRound}
-          total="12.501"
-          average={15}
-          title="Company Created"
-          tooltipText="Sell all Company"
-        />
+        {dataCardsSummary.map(
+          ({ icon, total, average, title, tooltipText }) => (
+            <CardSummary
+              key={title}
+              icon={icon}
+              total={total}
+              average={average}
+              title={title}
+              tooltipText={tooltipText}
+            />
+          )
+        )}
       </div>
     </div>
   );

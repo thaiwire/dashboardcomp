@@ -51,6 +51,13 @@ export default function Home() {
         <LastCustomers />
         <Saledistributors />
       </div>
+      <div
+        className="flex-col xl:flex xl:flex-row gap-y-4 md:gap-y-0 mt-12
+      md:mb-10 justify-center "
+      >
+        <p>Total subscribers</p>
+        <p>list integrations</p>
+      </div>
     </div>
   );
 }

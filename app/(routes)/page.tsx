@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { UserButton } from "@clerk/nextjs";
 import { CardSummary } from "./components/CardSummary";
 import { BookOpenCheck, UsersRound, Waypoints } from "lucide-react";
+import { LastCustomers } from "./components/LastCustomers";
+import { Saledistributors } from "./components/Salesdistributors";
 
 export const dataCardsSummary = [
   {
@@ -30,7 +32,6 @@ export const dataCardsSummary = [
 export default function Home() {
   return (
     <div>
-      <UserButton />
       <h2 className="text-2xl mb-4">Dashboard</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-20">
         {dataCardsSummary.map(
@@ -45,6 +46,10 @@ export default function Home() {
             />
           )
         )}
+      </div>
+      <div className="grid grid-cols-1 xl:grid-cols-2 md:gap-x-10 mt-12">
+        <LastCustomers />
+        <Saledistributors />
       </div>
     </div>
   );
